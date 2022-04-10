@@ -12,7 +12,7 @@ const calculate = (n1, operator, n2) => {
     if (operator === 'divide') return firstNum / secondNum;
 }
 
-const getKeyType = (key) => {
+const getKeyType = key => {
     const { action } = key.dataset;
     if (!action) return 'number';
     if (
@@ -49,7 +49,7 @@ const createResultString = (key, displayedNum, state) => {
             */
 
     if (keyType === 'number') {
-        return displayedNum === 0 ||
+        return displayedNum === '0' ||
         previousKeyType === 'operator' ||
         previousKeyType === 'calculate'
         ? keyContent
